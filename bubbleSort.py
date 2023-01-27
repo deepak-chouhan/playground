@@ -14,5 +14,5 @@ def bubbleSort(arr):
 
     return arr
 
-arr = [8, 5, 7, 3, 2]
+arr = [9, 5, 7, 3, 2]
 print(bubbleSort(arr))
