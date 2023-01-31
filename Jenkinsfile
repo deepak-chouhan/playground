@@ -24,7 +24,7 @@ pipeline {
 //     }
     stage('sort') {
       steps {
-        sh 'C:\Python38\python.exe pallindrome.py'
+        sh 'C:/Python38/python.exe pallindrome.py'
       }
     }
     
