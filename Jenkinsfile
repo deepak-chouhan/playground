@@ -22,11 +22,11 @@ pipeline {
 //         sh 'python3 --version'
 //       }
 //     }
-//     stage('sort') {
-//       steps {
-//         sh 'python3 bubbleSort.py '
-//       }
-//     }
+    stage('sort') {
+      steps {
+        sh 'C:\Python38\python.exe pallindrome.py'
+      }
+    }
     
   }
 }
