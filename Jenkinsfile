@@ -1,6 +1,11 @@
 pipeline {
   agent any
   stages {
+    stage('hello') {
+      steps {
+        echo "Hello World!"
+      }
+    }
 //     stage('version') {
 //       steps {
 //         sh 'python3 --version'
@@ -11,10 +16,5 @@ pipeline {
 //         sh 'python3 bubbleSort.py '
 //       }
 //     }
-    stage('hello') {
-      steps {
-        echo "Hello World!"
-      }
-    }
   }
 }
