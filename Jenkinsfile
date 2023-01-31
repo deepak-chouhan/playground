@@ -3,12 +3,12 @@ pipeline {
   stages {
     stage('version') {
       steps {
-        sh 'python --version'
+        sh 'python3 --version'
       }
     }
     stage('sort') {
       steps {
-        sh 'python bubbleSort.py '
+        sh 'python3 bubbleSort.py '
       }
     }
   }
