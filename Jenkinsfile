@@ -6,6 +6,16 @@ pipeline {
         echo "Hello World!"
       }
     }
+    stage('Build') {
+      steps {
+          sh 'javac BubbleSort.java'
+      }
+        }
+    stage('Run') {
+      steps {
+          sh 'java BubbleSort'
+      }
+    }
 //     stage('version') {
 //       steps {
 //         sh 'python3 --version'
