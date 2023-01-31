@@ -6,16 +6,17 @@ pipeline {
         echo "Hello World!"
       }
     }
-    stage('Build') {
-      steps {
-          sh 'javac helloWorld.java'
-      }
-        }
-    stage('Run') {
-      steps {
-          sh 'java helloWorld'
-      }
-    }
+//     stage('Build') {
+//       steps {
+//           sh 'javac helloWorld.java'
+//       }
+//         }
+//     stage('Run') {
+//       steps {
+//           sh 'java helloWorld'
+//       }
+//     }
+    
 //     stage('version') {
 //       steps {
 //         sh 'python3 --version'
