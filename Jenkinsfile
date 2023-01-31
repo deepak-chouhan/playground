@@ -8,12 +8,12 @@ pipeline {
     }
     stage('Build') {
       steps {
-          sh 'javac BubbleSort.java'
+          sh 'javac helloWorld.java'
       }
         }
     stage('Run') {
       steps {
-          sh 'java BubbleSort'
+          sh 'java helloWorld'
       }
     }
 //     stage('version') {
