@@ -24,7 +24,7 @@ pipeline {
 //     }
     stage('sort') {
       steps {
-        sh 'python3 pallindrome.py'
+        sh 'python pallindrome.py'
       }
     }
     
