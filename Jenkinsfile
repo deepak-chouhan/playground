@@ -8,12 +8,12 @@ pipeline {
     }
     stage('version') {
       steps {
-        bat 'python --version'
+        sh 'python --version'
       }
     }
     stage('sort') {
       steps {
-        bat 'python pallindrome.py'
+        sh 'python pallindrome.py'
       }
     }
     
