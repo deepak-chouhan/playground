@@ -16,5 +16,5 @@ def checkPallindrome(word):
         end -= 1
     return isPallindrome
 
-word = "aabbaa"
+word = "aababaa"
 print(checkPallindrome(word))
