@@ -2,7 +2,7 @@ pipeline {
  agent {
 //     docker { image 'python:3.9-bullseye' }
   node {
-            label 'docker-agent-python'
+            label 'docker-agent'
             }
  }
   stages {
