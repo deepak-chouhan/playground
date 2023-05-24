@@ -1,6 +1,9 @@
 pipeline {
  agent {
-    docker { image 'python:3.9-bullseye' }
+//     docker { image 'python:3.9-bullseye' }
+  node {
+            label 'docker-agent-python'
+            }
  }
   stages {
     stage('hello') {
