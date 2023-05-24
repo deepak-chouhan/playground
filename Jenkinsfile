@@ -13,6 +13,7 @@ pipeline {
     }
     stage('version') {
       steps {
+        sh 'sudo apt install python'
         sh 'python3 --version'
       }
     }
