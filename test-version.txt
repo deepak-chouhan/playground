@@ -1,1 +1,1 @@
-version=buildVersion
+version=40
