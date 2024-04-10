@@ -1,21 +1,21 @@
 name: SonarQube Scan
 
 on:
+  pull_request:
+    types: [opened, synchronize, reopened]
   issue_comment:
     types: [created]
-  pull_request_target:
-    types: [opened, synchronize, reopened]
 
 jobs:
   sonarcloud:
-    if: contains(github.event.comment.body, '/sonar')
+    if: github.event_name == 'pull_request' || contains(github.event.comment.body, '/sonar')
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
       - name: SonarCloud Scan
