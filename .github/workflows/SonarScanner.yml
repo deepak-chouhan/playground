@@ -1,13 +1,10 @@
 name: Build
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    types: [opened, synchronize, reopened]
+  issue_comment:
+    types: [created]
 jobs:
   sonarcloud:
-    if: contains(github.event.comment.body, '/run')
+    if: contains(github.event.comment.body, '/sonar')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
