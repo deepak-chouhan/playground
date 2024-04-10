@@ -1,18 +1,24 @@
-name: Build
+name: SonarQube Scan
+
 on:
+  pull_request:
+    types: [opened, synchronize, reopened]
   issue_comment:
     types: [created]
+
 jobs:
   sonarcloud:
-    if: contains(github.event.comment.body, '/sonar')
+    if: contains(github.event.comment.body, '/sonar') && github.event.issue.pull_request != null
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
         with:
+          ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_BRANCH: ${{ github.event.pull_request.head.ref }}
